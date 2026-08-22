@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Gamerxise - Get Fit While You Game</title>
+    <!-- Favicon Directive -->
+    <link rel="icon" type="image/x-icon" href="https://xmg.xstreamflex.com/i/BINL0e">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        xboxGreen: '#107C10',
+                        psBlue: '#00439c',
+                        darkBg: '#09090b',
+                        darkCard: '#18181b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Alpine JS for simple reactive elements -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-glow-green {
+            text-shadow: 0 0 15px rgba(16, 124, 16, 0.6);
+        }
+        .text-glow-blue {
+            text-shadow: 0 0 15px rgba(0, 67, 156, 0.6);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #107C10 0%, #00439c 100%);
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #159c15 0%, #0056c6 100%);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-darkBg text-gray-900 dark:text-zinc-100 min-h-screen transition-colors duration-300">
+<header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-zinc-800 bg-white/80 dark:bg-darkBg/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo (Asset 5) -->
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="https://xmg.xstreamflex.com/i/LU0dEi" alt="Gamerxise Logo" class="w-12 h-12 object-contain rounded-lg">
+                        <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-xboxGreen to-psBlue bg-clip-text text-transparent">
+                            GAMERXISE
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-semibold text-xboxGreen dark:text-xboxGreen hover:text-psBlue transition-colors">Home</a>
+                    <a href="products.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Programs</a>
+                    <a href="about.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Our Story</a>
+                    <a href="blog.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Articles</a>
+                    <a href="contact.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Support</a>
+                </nav>
+
+                <!-- Actions (Theme Toggle & CTA) -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <!-- Sun/Moon Toggle Button -->
+                    <button id="theme-toggle-btn" class="p-2.5 rounded-lg text-gray-500 hover:text-xboxGreen dark:text-gray-400 dark:hover:text-xboxGreen focus:outline-none" aria-label="Toggle Theme">
+                        <!-- Sun Icon (visible in dark) -->
+                        <svg id="theme-toggle-sun" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464a1 1 0 101.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"/></svg>
+                        <!-- Moon Icon (visible in light) -->
+                        <svg id="theme-toggle-moon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <a href="index.html#pricing" class="px-5 py-2.5 rounded-lg btn-gradient text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden space-x-2">
+                    <button id="theme-toggle-btn-mobile" class="p-2 rounded-lg text-gray-500 dark:text-gray-400">
+                        <!-- Icon swapped by JS -->
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 focus:outline-none" aria-label="Toggle Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-darkBg border-b border-gray-200 dark:border-zinc-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-xboxGreen">Home</a>
+            <a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Programs</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Our Story</a>
+            <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Articles</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Support</a>
+            <div class="pt-4 border-t border-gray-200 dark:border-zinc-800">
+                <a href="index.html#pricing" class="block w-full text-center py-3 rounded-lg btn-gradient text-white font-semibold">Join Gamerxise</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- GLOBAL HEADER NAVIGATION -->
+    
+
+    <!-- HERO SECTION: THE RAW CONFESSION -->
+    <section class="relative py-20 lg:py-32 overflow-hidden bg-zinc-50 dark:bg-zinc-950">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,124,16,0.08),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(16,124,16,0.15),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-xboxGreen/10 dark:bg-xboxGreen/20 text-xboxGreen text-xs font-bold uppercase tracking-wider">
+                        Founder's Directive & Story
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        I built this out of <br>
+                        <span class="bg-gradient-to-r from-xboxGreen via-emerald-400 to-psBlue bg-clip-text text-transparent">
+                            necessity to save my life.
+                        </span>
+                    </h1>
+                    <p class="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
+                        No board of directors. No venture capital. No fancy gym marketing teams. I am the founder, creator, active user, and currently the only member of Gamerxise. I was struggling, out of options, and desperately needed to fix my physical and mental health. I loved gaming—so I fused it directly into the cure.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#story" class="px-8 py-4 rounded-xl btn-gradient text-white font-bold text-center hover:opacity-90 transition-all shadow-lg shadow-xboxGreen/20">
+                            Read My Real Journey
+                        </a>
+                        <a href="#mechanism" class="px-8 py-4 rounded-xl border border-gray-300 dark:border-zinc-700 font-semibold text-center hover:bg-gray-100 dark:hover:bg-zinc-900 transition-colors">
+                            How It Actually Works
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-xboxGreen to-psBlue opacity-30 blur-lg"></div>
+                    <div class="relative bg-white dark:bg-zinc-900 p-3 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-2xl">
+                        <!-- Asset 1: Transformation raw shot -->
+                        <img src="https://xmg.xstreamflex.com/i/xdzeWJ" alt="20200625_173544591_iOS 2.jpg" class="rounded-xl shadow-lg w-full object-cover" />
+                        <div class="absolute bottom-6 left-6 right-6 bg-black/80 backdrop-blur-md p-4 rounded-lg text-xs text-zinc-300 border border-zinc-800">
+                            <p class="font-semibold text-white mb-1">June 2020: The Blueprint Phase</p>
+                            <p>Taking back control of my health and mental state through custom gaming routine iterations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM & THE TRUE MISSION -->
+    <section id="story" class="py-16 lg:py-24 bg-white dark:bg-darkBg border-y border-gray-100 dark:border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    From Failed Lands to a Perfect Prescription
+                </h2>
+                <div class="w-20 h-1 bg-xboxGreen mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 leading-relaxed text-gray-600 dark:text-zinc-300">
+                    <p>
+                        I originally designed Gamerxise targeting gamer dads. It flopped. It didn't go well because of lifestyle disconnects and targeted messages that missed the mark. But the physical, physiological formula I had developed was pristine. I spent a year and a half trying to land this rocket ship, taking off and failing to find the runway. It was disheartening. 
+                    </p>
+                    <p class="font-medium text-gray-900 dark:text-white">
+                        Yet, the truth remained: <span class="text-xboxGreen font-bold">it works.</span>
+                    </p>
+                    <p>
+                        Using this exact system, I personally <strong class="text-gray-900 dark:text-white">lost 30 lbs in exactly 3 months</strong>. But I wanted proof that it wasn't just my biology. 
+                    </p>
+                    <p>
+                        During my launch attempts, only one person followed through with the program precisely as prescribed. He was my one and only, non-paying fan follower who stuck strictly to the PDF manuals. The result? <strong class="text-gray-900 dark:text-white">He lost the exact same amount of weight and transformed his health.</strong> Two out of two people who actually followed the prescription achieved phenomenal physical alterations.
+                    </p>
+                    <div class="bg-zinc-50 dark:bg-zinc-900 p-6 rounded-xl border border-gray-200 dark:border-zinc-800 relative">
+                        <span class="absolute -top-3 -left-3 text-4xl text-xboxGreen/20 font-serif">“</span>
+                        <p class="italic text-sm text-zinc-500 dark:text-zinc-400">
+                            "If you actually run the program, your body will have no choice but to adjust. It's a clinical, physical loop that uses your brain's dopamine reward center to mask physical weariness."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="space-y-6">
+                        <div class="bg-zinc-50 dark:bg-zinc-900 p-2 rounded-xl border border-gray-200 dark:border-zinc-800 shadow">
+                            <!-- Asset 2: Second transformation/journey photo -->
+                            <img src="https://xmg.xstreamflex.com/i/r6oeLs" alt="20200630_032102024_iOS.jpg" class="rounded-xl shadow-lg w-full object-cover h-48 sm:h-64" />
+                            <p class="text-[11px] text-zinc-500 mt-2 text-center">Refining game-state integration (June 30, 2020)</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6 sm:mt-12">
+                        <div class="bg-zinc-50 dark:bg-zinc-900 p-2 rounded-xl border border-gray-200 dark:border-zinc-800 shadow">
+                            <!-- Asset 4: founder photo -->
+                            <img src="https://xmg.xstreamflex.com/i/e0Bnbq" alt="20200922_184055338_iOS.jpg" class="rounded-xl shadow-lg w-full object-cover h-48 sm:h-64" />
+                            <p class="text-[11px] text-zinc-500 mt-2 text-center">Three months in: Real, visible alterations (Sept 22, 2020)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE UNIQUE & POWERFUL MECHANISM: FORGETTING THE EXERCISE -->
+    <section id="mechanism" class="py-16 lg:py-24 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(0,67,156,0.1),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    The Magic of Cognitive Override
+                </h2>
+                <p class="mt-4 text-zinc-600 dark:text-zinc-400">
+                    Why traditional workouts feel agonizing, and why gaming-integrated exercise feels effortless.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Asset 3: Artyom Kim Unsplash for gaming lifestyle -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white dark:bg-zinc-900 p-4 rounded-2xl border border-gray-200 dark:border-zinc-800 shadow-xl">
+                        <img src="https://xmg.xstreamflex.com/i/QTXd71" alt="artyom-kim-uydt8hNz3hE-unsplash.jpg" class="rounded-xl shadow-lg w-full object-cover" />
+                        <div class="mt-4 flex items-center justify-between">
+                            <span class="text-xs text-zinc-400">Flow State Activation</span>
+                            <span class="inline-flex items-center rounded bg-xboxGreen/10 px-2.5 py-0.5 text-xs font-medium text-xboxGreen">Direct Input Loop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Feature 1: The Magic Mask -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-xboxGreen/10 text-xboxGreen font-bold text-lg">
+                            1
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">You Forget You Are Exercising</h3>
+                            <p class="text-zinc-600 dark:text-zinc-400">
+                                This is our most unique and powerful feature. Actively playing your favorite game blocks your brain's sensory paths from processing muscle fatigue. Even if you're not feeling great or motivated that day, the tactical inputs cancel out the exhaustion, allowing you to get a killer workout in without feeling the "weight" of it.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Controller Pure -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-psBlue/10 text-psBlue font-bold text-lg">
+                            2
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">No Additional Equipment</h3>
+                            <p class="text-zinc-600 dark:text-zinc-400">
+                                This program requires zero weird workout gear, belts, or sensors. It operates entirely around standard controller layouts (Xbox, PS style, or equivalent handheld devices). You use bodyweight and gravity targeted to exact gameplay moments.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Muscle Memory Lock -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-xboxGreen/10 text-xboxGreen font-bold text-lg">
+                            3
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">The Muscle Memory Requirement</h3>
+                            <p class="text-zinc-600 dark:text-zinc-400">
+                                <span class="text-rose-500 font-semibold">Honesty warning:</span> If you are testing a brand new game and attempting new exercises simultaneously, it will not go smoothly. The system thrives when you play games you have deep muscle memory for, or exercises you have mastered, or ideally both.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Performance Hindered / Straight Shot to the Zone -->
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-psBlue/10 text-psBlue font-bold text-lg">
+                            4
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">The Flow State After-Effect</h3>
+                            <p class="text-zinc-600 dark:text-zinc-400">
+                                Yes, your physical gaming performance will be slightly hindered *during* the active reps. But the physiological after-effect? A straight shot into the ultimate zone of razor-sharp focus and competitive execution.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM CATEGORIZATION GRID -->
+    <section class="py-16 lg:py-24 bg-white dark:bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">The Gamerxise Protocol Suite</h2>
+                <p class="mt-4 text-zinc-600 dark:text-zinc-400">Categorized blueprints built to transform your physique during downtime, respawn loops, or matching game cycles.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Ab Program -->
+                <div class="bg-zinc-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 flex flex-col justify-between hover:border-xboxGreen/50 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-xboxGreen/10 text-xboxGreen flex items-center justify-center font-black mb-4">AB</div>
+                        <h3 class="text-xl font-bold mb-2">Gamerxise Abs</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
+                            Targeted core activation exercises custom designed to map seamlessly to standard matching and queue phases. Clear instructions with step-by-step images.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-gray-900 dark:text-white block mb-4">$25.00</span>
+                        <a href="products.html" class="block w-full py-2.5 text-center text-xs font-bold bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 rounded-lg transition-colors">View Ab Program</a>
+                    </div>
+                </div>
+
+                <!-- Upper Body -->
+                <div class="bg-zinc-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 flex flex-col justify-between hover:border-psBlue/50 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-psBlue/10 text-psBlue flex items-center justify-center font-black mb-4">UP</div>
+                        <h3 class="text-xl font-bold mb-2">Gamerxise Upper</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
+                            13+ clinical, gameplay-tested upper body movements to tone, build endurance, and strengthen chest, shoulders, and arms without leaving your chair.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-gray-900 dark:text-white block mb-4">$25.00</span>
+                        <a href="products.html" class="block w-full py-2.5 text-center text-xs font-bold bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 rounded-lg transition-colors">View Upper Program</a>
+                    </div>
+                </div>
+
+                <!-- Lower Body -->
+                <div class="bg-zinc-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 flex flex-col justify-between hover:border-xboxGreen/50 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-xboxGreen/10 text-xboxGreen flex items-center justify-center font-black mb-4">LO</div>
+                        <h3 class="text-xl font-bold mb-2">Gamerxise Lower</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
+                            8+ leg and glute strengthening exercises. Re-train lower body posture and destroy the damaging physical effects of prolonged sitting.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-gray-900 dark:text-white block mb-4">$25.00</span>
+                        <a href="products.html" class="block w-full py-2.5 text-center text-xs font-bold bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 rounded-lg transition-colors">View Lower Program</a>
+                    </div>
+                </div>
+
+                <!-- FitQuest RPG -->
+                <div class="bg-zinc-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 flex flex-col justify-between hover:border-psBlue/50 transition-colors">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-psBlue/10 text-psBlue flex items-center justify-center font-black mb-4">FQ</div>
+                        <h3 class="text-xl font-bold mb-2">FitQuest RPG</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
+                            A fantasy role-playing layout where physical home workouts drive story consequences. Turn your standard setups into tactical game choices.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-gray-900 dark:text-white block mb-4">Included in Complete</span>
+                        <a href="products.html" class="block w-full py-2.5 text-center text-xs font-bold bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 rounded-lg transition-colors">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNICORN DESIGN CONCEPT SHOWCASE -->
+    <section class="py-16 bg-zinc-50 dark:bg-zinc-950 border-t border-gray-200 dark:border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-extrabold tracking-tight">The Icon: A Controller Unicorn</h2>
+                    <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        Why the weird logo? Our logo is a classic controller that kinda looks like a mythical unicorn. It represents the impossible synthesis: active fitness and elite gaming existing in the exact same moment. It stands for doing what traditional gym culture told you was impossible: gaming hard and stripping away fat without stepping outside your zone.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="p-4 bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="block text-2xl font-black text-xboxGreen">30 lbs</span>
+                            <span class="text-[11px] text-zinc-500">Lost in 3 Mos</span>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="block text-2xl font-black text-psBlue">28+</span>
+                            <span class="text-[11px] text-zinc-500">Clinical Moves</span>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-zinc-900 rounded-xl border border-gray-100 dark:border-zinc-800">
+                            <span class="block text-2xl font-black text-xboxGreen">1.5 Yr</span>
+                            <span class="text-[11px] text-zinc-500">Hard Dev Iterations</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center p-8 bg-zinc-200 dark:bg-zinc-900 rounded-2xl relative">
+                    <!-- Asset 6: Logo variations / showcase -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-xboxGreen/20 to-psBlue/20 rounded-2xl blur-xl"></div>
+                    <div class="relative max-w-sm w-full bg-white dark:bg-zinc-950 p-6 rounded-2xl shadow-xl border border-gray-200 dark:border-zinc-800 text-center">
+                        <img src="https://xmg.xstreamflex.com/i/qM4z8L" alt="Logo (30).png" class="mx-auto w-48 h-48 object-contain rounded-xl" />
+                        <h4 class="mt-4 text-lg font-bold">The Original Icon</h4>
+                        <p class="text-xs text-zinc-500 mt-1">Combining the gaming controller matrix with elite physical transformation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING & STRIPE PAYMENT INTEGRATION SECTION -->
+    <section id="pricing" class="py-20 lg:py-28 bg-white dark:bg-darkBg relative">
+        <div class="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(16,124,16,0.05))]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-sm font-bold text-xboxGreen uppercase tracking-wider block mb-2">Ready to Alter Your Path?</span>
+                <h2 class="text-4xl font-extrabold tracking-tight">One Complete Package. No Excuses Left.</h2>
+                <p class="mt-4 text-zinc-600 dark:text-zinc-400">Join the active flow state loop right now. Download all programs in optimized PDF format complete with instructions and visual exercise matrices.</p>
+            </div>
+
+            <div class="max-w-md mx-auto bg-zinc-50 dark:bg-zinc-900 border-2 border-xboxGreen rounded-3xl p-8 relative shadow-2xl">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-xboxGreen text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">
+                    Best Value Bundle
+                </div>
+                
+                <div class="text-center pb-8 border-b border-gray-200 dark:border-zinc-800">
+                    <h3 class="text-2xl font-bold">GAMERXISE COMPLETE</h3>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-2">The exact physical transformation engine that cured my health.</p>
+                    <div class="mt-6 flex items-baseline justify-center gap-1">
+                        <span class="text-5xl font-black tracking-tight">$60</span>
+                        <span class="text-sm text-zinc-500">one-time</span>
+                    </div>
+                </div>
+
+                <div class="py-8 space-y-4">
+                    <div class="flex items-start gap-3 text-sm">
+                        <svg class="w-5 h-5 text-xboxGreen flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong>28+ total body exercises</strong> designed and clinically tested to be run seamlessly during active gaming sessions.</span>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm">
+                        <svg class="w-5 h-5 text-xboxGreen flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Clear structural guides, diagrams, and lifestyle alterations for every routine.</span>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm">
+                        <svg class="w-5 h-5 text-xboxGreen flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong>Includes Abs, Upper Body, and Lower Body programs</strong> (Standard $75 value if bought individually).</span>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm">
+                        <svg class="w-5 h-5 text-xboxGreen flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong>FitQuest RPG System Included</strong> – Interactive fantasy quests fueled by your workout choices.</span>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm">
+                        <svg class="w-5 h-5 text-xboxGreen flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span>Unlimited configuration options, health life-hacks, and metabolic diet suggestions.</span>
+                    </div>
+                </div>
+
+                <!-- ADVANCED BUSINESS INTEGRATION DIRECTIVES - STRIPE BUY BUTTON -->
+                <div class="pt-4">
+                    <a href="https://buy.stripe.com/fZu5kEc8pcjs6pp9YTfnO00" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-4 rounded-2xl btn-gradient text-white font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-150">
+                        Purchase Complete ($60)
+                    </a>
+                    <p class="text-center text-[11px] text-zinc-500 mt-3">Secure payment processed via Stripe. Lifetime access to all future updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL FOOTER -->
+    
+
+    <!-- THEME TOGGLE & MOBILE DRAWER JAVASCRIPT -->
+    <script>
+        // DOM Elements
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-btn-mobile');
+        const sunIcon = document.getElementById('theme-toggle-sun');
+        const moonIcon = document.getElementById('theme-toggle-moon');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Function to set theme
+        function setTheme(isDark) {
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('color-theme', 'light');
+            }
+        }
+
+        // Initialize theme based on preference/localStorage
+        const savedTheme = localStorage.getItem('color-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            setTheme(true);
+        } else {
+            setTheme(false);
+        }
+
+        // Theme Switch Event Listeners
+        themeToggleBtn.addEventListener('click', () => {
+            const isCurrentlyDark = document.documentElement.classList.contains('dark');
+            setTheme(!isCurrentlyDark);
+        });
+
+        themeToggleBtnMobile.addEventListener('click', () => {
+            const isCurrentlyDark = document.documentElement.classList.contains('dark');
+            setTheme(!isCurrentlyDark);
+        });
+
+        // Mobile Menu Drawer Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+<footer class="bg-neutral-950 text-gray-400 py-12 border-t border-zinc-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <span class="text-lg font-black tracking-wider text-white">GAMERXISE</span>
+                    <p class="mt-2 text-xs text-gray-400">
+                        Helping you change your life, save your life, and do it all while having fun.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Subpages</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-xboxGreen">Home</a></li>
+                        <li><a href="products.html" class="hover:text-xboxGreen">Programs (All PDFs)</a></li>
+                        <li><a href="about.html" class="hover:text-xboxGreen">Our Journey & Story</a></li>
+                        <li><a href="blog.html" class="hover:text-xboxGreen">Blog & Science</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Resources</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="contact.html" class="hover:text-xboxGreen">Contact Support</a></li>
+                        <li><a href="terms.html" class="hover:text-xboxGreen">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="hover:text-xboxGreen">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Disclaimer</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">
+                        Consult with your health professional before starting any interactive workout systems. Individual physical results may vary.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-600">
+                <p>&copy; 2024 Gamerxise Company. All rights reserved.</p>
+                <p>Designed for gamers who demand peak performance.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+(function() {
+  function initNavControls() {
+    const btn = document.getElementById('mobile-menu-btn') || document.querySelector('[data-menu-toggle]');
+    const menu = document.getElementById('mobile-menu') || document.querySelector('[data-menu-content]');
+    if (btn && menu) {
+      btn.onclick = function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+      };
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => menu.classList.add('hidden'));
+      });
+    }
+    const themeBtn = document.getElementById('theme-toggle-btn') || document.querySelector('[data-theme-toggle]');
+    if (themeBtn) {
+      themeBtn.onclick = function(e) {
+        e.stopPropagation();
+        document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('xsites_theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch(err){}
+      };
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavControls);
+  } else {
+    initNavControls();
+  }
+})();
+</script>
+<script>
+        // DOM Elements
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-btn-mobile');
+        const themeToggleSun = document.getElementById('theme-toggle-sun');
+        const themeToggleMoon = document.getElementById('theme-toggle-moon');
+        
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Theme Setup
+        // Defaulting to "crisp, modern light mode" as requested.
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            if(themeToggleSun) themeToggleSun.classList.remove('hidden');
+            if(themeToggleMoon) themeToggleMoon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            if(themeToggleSun) themeToggleSun.classList.add('hidden');
+            if(themeToggleMoon) themeToggleMoon.classList.remove('hidden');
+        }
+
+        // Toggle Theme Handlers
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                themeToggleSun.classList.add('hidden');
+                themeToggleMoon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                themeToggleSun.classList.remove('hidden');
+                themeToggleMoon.classList.add('hidden');
+            }
+        }
+
+        if(themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+        if(themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Drawer Handler
+        if(mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
