@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of Dissociative Play - Gamerxise</title>
+    <!-- Favicon Directive -->
+    <link rel="icon" type="image/x-icon" href="https://xmg.xstreamflex.com/i/BINL0e">
+    
+    <!-- Dynamic Article Sync -->
+    <script src="articles-data.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        xboxGreen: '#107C10',
+                        psBlue: '#00439c',
+                        darkBg: '#09090b',
+                        darkCard: '#18181b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Alpine JS for simple reactive elements -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-glow-green {
+            text-shadow: 0 0 15px rgba(16, 124, 16, 0.6);
+        }
+        .text-glow-blue {
+            text-shadow: 0 0 15px rgba(0, 67, 156, 0.6);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #107C10 0%, #00439c 100%);
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #159c15 0%, #0056c6 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-darkBg dark:text-gray-100 min-h-screen flex flex-col transition-colors duration-200">
+<header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-zinc-800 bg-white/80 dark:bg-darkBg/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo (Asset 5) -->
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="https://xmg.xstreamflex.com/i/LU0dEi" alt="Gamerxise Logo" class="w-12 h-12 object-contain rounded-lg">
+                        <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-xboxGreen to-psBlue bg-clip-text text-transparent">
+                            GAMERXISE
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-semibold text-xboxGreen dark:text-xboxGreen hover:text-psBlue transition-colors">Home</a>
+                    <a href="products.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Programs</a>
+                    <a href="about.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Our Story</a>
+                    <a href="blog.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Articles</a>
+                    <a href="contact.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Support</a>
+                </nav>
+
+                <!-- Actions (Theme Toggle & CTA) -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <!-- Sun/Moon Toggle Button -->
+                    <button id="theme-toggle-btn" class="p-2.5 rounded-lg text-gray-500 hover:text-xboxGreen dark:text-gray-400 dark:hover:text-xboxGreen focus:outline-none" aria-label="Toggle Theme">
+                        <!-- Sun Icon (visible in dark) -->
+                        <svg id="theme-toggle-sun" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464a1 1 0 101.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"/></svg>
+                        <!-- Moon Icon (visible in light) -->
+                        <svg id="theme-toggle-moon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <a href="index.html#pricing" class="px-5 py-2.5 rounded-lg btn-gradient text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden space-x-2">
+                    <button id="theme-toggle-btn-mobile" class="p-2 rounded-lg text-gray-500 dark:text-gray-400">
+                        <!-- Icon swapped by JS -->
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 focus:outline-none" aria-label="Toggle Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-darkBg border-b border-gray-200 dark:border-zinc-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-xboxGreen">Home</a>
+            <a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Programs</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Our Story</a>
+            <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Articles</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Support</a>
+            <div class="pt-4 border-t border-gray-200 dark:border-zinc-800">
+                <a href="index.html#pricing" class="block w-full text-center py-3 rounded-lg btn-gradient text-white font-semibold">Join Gamerxise</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- GLOBAL HEADER NAVIGATION -->
+    
+
+    <!-- ARTICLE HERO SECTION -->
+    <main class="flex-grow">
+        <section class="relative py-16 lg:py-24 bg-white dark:bg-zinc-950 overflow-hidden">
+            <div class="absolute inset-0 opacity-10 dark:opacity-30 pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-xboxGreen blur-[120px]"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-psBlue blur-[120px]"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Breadcrumbs -->
+                
+
+                <!-- Post Title -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-6 leading-tight">
+                    Forget You Are Exercising: The Neuroscience of <span class="bg-gradient-to-r from-xboxGreen to-psBlue bg-clip-text text-transparent">Dissociative Play</span>
+                </h1>
+
+                <!-- Meta & Author Badge -->
+                <div class="flex flex-wrap items-center gap-4 py-4 border-y border-gray-200 dark:border-zinc-800 mb-8">
+                    <div class="flex items-center gap-3">
+                        <img src="https://xmg.xstreamflex.com/i/qM4z8L" alt="Gamerxise Creator" class="w-12 h-12 rounded-full border border-xboxGreen object-cover bg-zinc-900">
+                        <div>
+                            <span class="block text-sm font-bold text-gray-900 dark:text-white">Gamerxise Creator & Founder</span>
+                            <span class="block text-xs text-gray-500 dark:text-gray-400">Owner, User & Sole Innovator</span>
+                        </div>
+                    </div>
+                    <div class="ml-auto flex items-center gap-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                        <span class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            Updated Oct 24, 2024
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                            7 Min Read
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Hero Image (Asset 3 - artyom-kim-uydt8hNz3hE-unsplash.jpg) -->
+                <div class="mb-12">
+                    <img src="https://xmg.xstreamflex.com/i/QTXd71" alt="artyom-kim-uydt8hNz3hE-unsplash.jpg" class="rounded-2xl shadow-2xl w-full h-[300px] sm:h-[450px] object-cover border border-zinc-800" />
+                    <p class="text-xs text-center text-gray-500 dark:text-gray-400 mt-2">Entering the zone: How deep gaming sessions mute the body's perception of heavy physical exertion.</p>
+                </div>
+
+                <!-- ARTICLE BODY CONTENT -->
+                <div class="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-zinc-300 space-y-6 leading-relaxed">
+                    <p class="text-lg sm:text-xl font-medium text-gray-900 dark:text-zinc-100">
+                        If you've ever set foot in a traditional gym, you know the mental crushing weight of watching the seconds tick by on a treadmill. Every fiber of your being is telling you to stop. Your brain is hyper-focused on the lactic acid burn, the dry throat, and the fatigue.
+                    </p>
+                    
+                    <p>
+                        But what happens when you are actively tracking a target in a high-intensity battle royale, executing a perfectly timed parry in a soulslike game, or dodging projectiles in a chaotic arcade environment? Your cognitive processor is completely overloaded with high-stakes, fast-paced decision making. This isn't just entertainment—it's a neurological hack known as <strong>Dissociative Play</strong>.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">How Gaming Cancels Out the Feel of a Workout</h2>
+                    <p>
+                        Our central nervous system acts as a traffic controller. When you exercise normally, your muscles send constant fatigue signals up to your brain. Without external stimuli, these signals have an open, clear highway to make you feel exhausted. 
+                    </p>
+                    <p>
+                        When you introduce a controller in your hands (specifically Xbox or PlayStation style controllers) and boot up your favorite game, you create a beautiful bottleneck. Your brain is forced to allocate its limited working memory to game mechanics, muscle memory, tactical positioning, and hand-eye coordination. The physical sensation of doing squats, static holds, or core work gets pushed to the background. 
+                    </p>
+
+                    <!-- Quote Callout Box (Incorporates personal background) -->
+                    <blockquote class="border-l-4 border-xboxGreen pl-6 my-8 italic text-lg text-gray-900 dark:text-zinc-100 bg-gray-100 dark:bg-zinc-900/50 p-5 rounded-r-xl">
+                        "I created this exercise system out of absolute necessity to save my life. I was in a dark place physically and mentally. When I began combining specific upper and lower body movements directly with muscle-memory gaming, I realized something shocking: I was working out incredibly hard, but I couldn't feel the weight of it. Active gaming canceled out the fatigue, allowing me to drop 30 lbs in 3 months. It completely saved me."
+                        <span class="block mt-2 text-sm font-bold text-xboxGreen">— Founder, Gamerxise</span>
+                    </blockquote>
+
+                    <!-- Asset 1 (20200625_173544591_iOS 2.jpg) -->
+                    <div class="my-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">The Real Evidence</h3>
+                            <p class="text-sm">
+                                It sounds too good to be true, but it works directly on our instinctual wiring. The key is <strong>muscle memory</strong>. If both the game and the exercises are familiar, you seamlessly slip into a flow state. This is exactly how the creator and our only year-long follower dropped significant weight and rebuilt their cardiovascular systems without traditional gym equipment.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="https://xmg.xstreamflex.com/i/xdzeWJ" alt="20200625_173544591_iOS 2.jpg" class="rounded-xl shadow-lg w-full object-cover" />
+                            <span class="block text-[10px] text-gray-500 text-center mt-1">Real proof from our foundational testing phases.</span>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Entering the "Zone" (The After-Effect)</h2>
+                    <p>
+                        Yes, your immediate gaming performance will be slightly hindered during the peak of your workout. You might miss a sniper shot or miss a perfect combo. But here is the magical part: once your Gamerxise session is complete, your brain remains in an elite, elevated state. 
+                    </p>
+                    <p>
+                        The unique cocktail of adrenaline, cardio-induced endorphins, and intense cognitive gaming focus triggers a straight shot into the <strong>ultimate flow zone</strong>. After your workout is finished and you rest your body, your hand-eye coordination spikes, and you will play better than you ever have before. It is a biological supercharge.
+                    </p>
+
+                    <!-- Asset 4 (20200922_184055338_iOS.jpg) -->
+                    <div class="my-10 bg-zinc-900 p-6 rounded-xl border border-zinc-800 flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-full md:w-1/3">
+                            <img src="https://xmg.xstreamflex.com/i/e0Bnbq" alt="20200922_184055338_iOS.jpg" class="rounded-lg shadow-md w-full object-cover" />
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <h4 class="text-white text-lg font-bold mb-1">A Word on Consistency</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">
+                                Our community is built of real, everyday gamers who want to enjoy life and get healthy without dedicating hours to painful gym commutes. Utilizing our clinical-designed PDF programs, you get exactly what you need to tone, strengthen, and shed body fat without thinking twice about it.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- KEY TAKEAWAYS BOX -->
+                    <div class="bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8 rounded-2xl border border-xboxGreen/20 my-10">
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                            <span class="inline-block w-3 h-3 rounded-full bg-xboxGreen"></span> 
+                            Key Takeaways for Your Gamerxise Journey
+                        </h3>
+                        <ul class="space-y-3 text-sm sm:text-base text-zinc-300">
+                            <li class="flex items-start gap-2">
+                                <span class="text-xboxGreen font-bold">✓</span>
+                                <strong>Muscle Memory is Crucial:</strong> To forget the pain, ensure you are playing a game you know well, paired with exercises you've practiced.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-xboxGreen font-bold">✓</span>
+                                <strong>No Gym Equipment Needed:</strong> You don't need weights, racks, or fancy treadmills. Just your Xbox or PlayStation controller and your screen.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-xboxGreen font-bold">✓</span>
+                                <strong>Overcome "Off-Days":</strong> Even when you don't feel like working out, picking up your controller activates your brain and automatically pulls you through a heavy session.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">Start Tapping Into Dissociative Flow Today</h2>
+                    <p>
+                        Stop waiting for the "perfect motivation" to hit the gym. Leverage your gaming habit as your greatest tool for weight loss, physical endurance, and absolute mental clarity. 
+                    </p>
+                </div>
+
+                <!-- SHARE BUTTONS -->
+                <div class="flex items-center justify-between border-t border-gray-200 dark:border-zinc-800 pt-6 mt-12">
+                    <span class="text-sm font-semibold text-gray-500 dark:text-gray-400">Share this article:</span>
+                    <div class="flex items-center gap-3">
+                        <button class="p-2 rounded-md bg-gray-100 hover:bg-gray-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 text-gray-600 dark:text-zinc-300 text-xs sm:text-sm font-medium transition-colors" onclick="alert('Link copied to clipboard!')">Copy Link</button>
+                        <button class="p-2 rounded-md bg-xboxGreen text-white text-xs sm:text-sm font-medium hover:bg-opacity-90 transition-all">Twitter</button>
+                        <button class="p-2 rounded-md bg-psBlue text-white text-xs sm:text-sm font-medium hover:bg-opacity-90 transition-all">Facebook</button>
+                    </div>
+                </div>
+
+                <!-- CALL TO ACTION (Stripe Pay Button Integrated) -->
+                <div id="pricing" class="bg-gradient-to-r from-zinc-950 to-zinc-900 rounded-3xl p-8 sm:p-12 border border-zinc-800 shadow-2xl mt-16 relative overflow-hidden text-center">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-xboxGreen/10 via-transparent to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="inline-block px-3 py-1 bg-xboxGreen/20 text-xboxGreen text-xs font-bold uppercase tracking-widest rounded-full mb-4">LIMITED OFFER</span>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white mb-2">Get the Ultimate Gamerxise System</h3>
+                        <p class="text-zinc-400 max-w-lg mx-auto text-sm sm:text-base mb-8">
+                            Start losing weight, boosting energy, and taking control of your health while playing your favorite titles. No heavy gear required.
+                        </p>
+                        
+                        <!-- Price Tag -->
+                        <div class="flex items-center justify-center gap-3 mb-6">
+                            <span class="text-zinc-500 line-through text-lg">$135</span>
+                            <span class="text-4xl font-extrabold text-white">$60</span>
+                            <span class="text-xs text-xboxGreen bg-xboxGreen/15 px-2.5 py-1 rounded-full font-bold">Save 55% Today</span>
+                        </div>
+
+                        <!-- Active Stripe Button Directive -->
+                        <div class="inline-block">
+                            <a href="https://buy.stripe.com/fZu5kEc8pcjs6pp9YTfnO00" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl btn-gradient text-white font-bold text-lg shadow-2xl hover:scale-105 transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V10h16v8zm0-10H4V6h16v2z"/></svg>
+                                Get Complete Program Now ($60)
+                            </a>
+                        </div>
+                        <p class="text-[11px] text-zinc-500 mt-4 leading-normal">Instant high-quality PDF downloads with images, workouts, and modifications.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RELATED ARTICLES GRID -->
+        <section class="py-16 bg-gray-100 dark:bg-zinc-900 border-t border-gray-200 dark:border-zinc-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center md:text-left mb-10">
+                    <h2 class="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white">More Insights & Guides</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Unlock your maximum physical potential without dropping your controller.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Related Article 1 -->
+                    <div class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-800 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                        <div class="h-48 overflow-hidden relative">
+                            <!-- Asset 2 (20200630_032102024_iOS.jpg) -->
+                            <img src="https://xmg.xstreamflex.com/i/r6oeLs" alt="Gamerxise Routine Development" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                            <span class="absolute top-3 left-3 bg-xboxGreen text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">Fitness</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs text-gray-400 block mb-2">October 21, 2024</span>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3 hover:text-xboxGreen transition-colors">
+                                <a href="blog-post-1.html">How Gamerxise Saved My Life: One Gamers Journey to -30lbs</a>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-3">
+                                The untold story of how raw necessity forced me to conceptualize, iterate, and design a weight loss system centered completely around my console.
+                            </p>
+                            <a href="blog-post-1.html" class="mt-auto text-xs sm:text-sm font-bold text-xboxGreen hover:text-psBlue flex items-center gap-1">
+                                Read Full Article &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Related Article 2 -->
+                    <div class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden border border-gray-200 dark:border-zinc-800 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                        <div class="h-48 overflow-hidden relative">
+                            <!-- Asset 4 (20200922_184055338_iOS.jpg) -->
+                            <img src="https://xmg.xstreamflex.com/i/e0Bnbq" alt="Muscle Memory Exercises" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                            <span class="absolute top-3 left-3 bg-psBlue text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">Gaming Physiology</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs text-gray-400 block mb-2">October 18, 2024</span>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3 hover:text-xboxGreen transition-colors">
+                                <a href="blog-post-2.html">Why Muscle Memory is Your Ultimate Secret Workout weapon</a>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-3">
+                                Understanding why attempting a workout over a brand new game will result in total chaos, and how to structure your routine around muscle memories.
+                            </p>
+                            <a href="blog-post-2.html" class="mt-auto text-xs sm:text-sm font-bold text-xboxGreen hover:text-psBlue flex items-center gap-1">
+                                Read Full Article &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Related Article 3 (Self-Reference / Current Article style) -->
+                    <div class="bg-white dark:bg-darkCard rounded-2xl overflow-hidden border border-xboxGreen/40 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full ring-2 ring-xboxGreen/20">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://xmg.xstreamflex.com/i/QTXd71" alt="Dissociative Play State" class="w-full h-full object-cover" />
+                            <span class="absolute top-3 left-3 bg-zinc-800 text-zinc-300 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Current Article</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-xs text-gray-400 block mb-2">October 24, 2024</span>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
+                                <span class="text-xboxGreen">Dissociative Play: How Gaming Brain Hacks Physical Strain</span>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-3">
+                                Explore the intense brain bypass mechanics where complex cognitive controller games override muscle fatigue pathways entirely.
+                            </p>
+                            <span class="mt-auto text-xs sm:text-sm font-semibold text-gray-400 italic">
+                                Currently Reading
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    
+
+    <!-- SCRIPT LOGIC FOR NAVIGATION & DARK MODE TOGGLER -->
+    <script>
+        // Dark Mode Logic
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-btn-mobile');
+        const sunIcon = document.getElementById('theme-toggle-sun');
+        const moonIcon = document.getElementById('theme-toggle-moon');
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+        }
+
+        // Initialize Theme Icons
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Drawer Control
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+<footer class="bg-neutral-950 text-gray-400 py-12 border-t border-zinc-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <span class="text-lg font-black tracking-wider text-white">GAMERXISE</span>
+                    <p class="mt-2 text-xs text-gray-400">
+                        Helping you change your life, save your life, and do it all while having fun.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Subpages</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-xboxGreen">Home</a></li>
+                        <li><a href="products.html" class="hover:text-xboxGreen">Programs (All PDFs)</a></li>
+                        <li><a href="about.html" class="hover:text-xboxGreen">Our Journey & Story</a></li>
+                        <li><a href="blog.html" class="hover:text-xboxGreen">Blog & Science</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Resources</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="contact.html" class="hover:text-xboxGreen">Contact Support</a></li>
+                        <li><a href="terms.html" class="hover:text-xboxGreen">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="hover:text-xboxGreen">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Disclaimer</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">
+                        Consult with your health professional before starting any interactive workout systems. Individual physical results may vary.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-600">
+                <p>&copy; 2024 Gamerxise Company. All rights reserved.</p>
+                <p>Designed for gamers who demand peak performance.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+(function() {
+  function initNavControls() {
+    const btn = document.getElementById('mobile-menu-btn') || document.querySelector('[data-menu-toggle]');
+    const menu = document.getElementById('mobile-menu') || document.querySelector('[data-menu-content]');
+    if (btn && menu) {
+      btn.onclick = function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+      };
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => menu.classList.add('hidden'));
+      });
+    }
+    const themeBtn = document.getElementById('theme-toggle-btn') || document.querySelector('[data-theme-toggle]');
+    if (themeBtn) {
+      themeBtn.onclick = function(e) {
+        e.stopPropagation();
+        document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('xsites_theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch(err){}
+      };
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavControls);
+  } else {
+    initNavControls();
+  }
+})();
+</script>
+<script>
+        // DOM Elements
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-btn-mobile');
+        const themeToggleSun = document.getElementById('theme-toggle-sun');
+        const themeToggleMoon = document.getElementById('theme-toggle-moon');
+        
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Theme Setup
+        // Defaulting to "crisp, modern light mode" as requested.
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            if(themeToggleSun) themeToggleSun.classList.remove('hidden');
+            if(themeToggleMoon) themeToggleMoon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            if(themeToggleSun) themeToggleSun.classList.add('hidden');
+            if(themeToggleMoon) themeToggleMoon.classList.remove('hidden');
+        }
+
+        // Toggle Theme Handlers
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                themeToggleSun.classList.add('hidden');
+                themeToggleMoon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                themeToggleSun.classList.remove('hidden');
+                themeToggleMoon.classList.add('hidden');
+            }
+        }
+
+        if(themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+        if(themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Drawer Handler
+        if(mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
