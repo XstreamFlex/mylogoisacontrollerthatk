@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamerxise - Privacy Policy & Data Protection</title>
+    <!-- Favicon Directive -->
+    <link rel="icon" type="image/x-icon" href="https://xmg.xstreamflex.com/i/BINL0e">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        xboxGreen: '#107C10',
+                        psBlue: '#00439c',
+                        darkBg: '#09090b',
+                        darkCard: '#18181b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Alpine JS for simple reactive elements -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-glow-green {
+            text-shadow: 0 0 15px rgba(16, 124, 16, 0.6);
+        }
+        .text-glow-blue {
+            text-shadow: 0 0 15px rgba(0, 67, 156, 0.6);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #107C10 0%, #00439c 100%);
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #159c15 0%, #0056c6 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-darkBg dark:text-gray-100 transition-colors duration-200">
+<header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-zinc-800 bg-white/80 dark:bg-darkBg/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo (Asset 5) -->
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="https://xmg.xstreamflex.com/i/LU0dEi" alt="Gamerxise Logo" class="w-12 h-12 object-contain rounded-lg">
+                        <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-xboxGreen to-psBlue bg-clip-text text-transparent">
+                            GAMERXISE
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-semibold text-xboxGreen dark:text-xboxGreen hover:text-psBlue transition-colors">Home</a>
+                    <a href="products.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Programs</a>
+                    <a href="about.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Our Story</a>
+                    <a href="blog.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Articles</a>
+                    <a href="contact.html" class="text-sm font-medium hover:text-xboxGreen transition-colors text-gray-600 dark:text-gray-300">Support</a>
+                </nav>
+
+                <!-- Actions (Theme Toggle & CTA) -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <!-- Sun/Moon Toggle Button -->
+                    <button id="theme-toggle-btn" class="p-2.5 rounded-lg text-gray-500 hover:text-xboxGreen dark:text-gray-400 dark:hover:text-xboxGreen focus:outline-none" aria-label="Toggle Theme">
+                        <!-- Sun Icon (visible in dark) -->
+                        <svg id="theme-toggle-sun" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464a1 1 0 101.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"/></svg>
+                        <!-- Moon Icon (visible in light) -->
+                        <svg id="theme-toggle-moon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <a href="index.html#pricing" class="px-5 py-2.5 rounded-lg btn-gradient text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden space-x-2">
+                    <button id="theme-toggle-btn-mobile" class="p-2 rounded-lg text-gray-500 dark:text-gray-400">
+                        <!-- Icon swapped by JS -->
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 focus:outline-none" aria-label="Toggle Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-darkBg border-b border-gray-200 dark:border-zinc-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-semibold text-xboxGreen">Home</a>
+            <a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Programs</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Our Story</a>
+            <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Articles</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800">Support</a>
+            <div class="pt-4 border-t border-gray-200 dark:border-zinc-800">
+                <a href="index.html#pricing" class="block w-full text-center py-3 rounded-lg btn-gradient text-white font-semibold">Join Gamerxise</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- GLOBAL HEADER NAVIGATION -->
+    
+
+    <!-- MAIN BODY CONTENT: PRIVACY HIGH-CONVERTING LAYOUT -->
+    <main class="min-h-screen py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        
+        <!-- Hero Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-xs font-semibold tracking-wider text-xboxGreen dark:text-xboxGreen mb-4 uppercase">
+                🛡️ Secure &amp; Direct Play Policy
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4 text-gray-900 dark:text-white">
+                Your Data is Your <span class="bg-gradient-to-r from-xboxGreen to-psBlue bg-clip-text text-transparent">Inventory</span>.<br class="hidden sm:inline">We Do Not Loot It.
+            </h1>
+            <p class="text-base sm:text-lg text-gray-600 dark:text-zinc-400">
+                Gamerxise is a single-founder startup designed to help you save your physical life through gamified fitness. We take your digital safety as seriously as your personal high scores. No invasive webcams, no tracking algorithms, just peak physical execution.
+            </p>
+        </div>
+
+        <!-- Privacy Assurance Showcase Block -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 items-center">
+            <!-- Left Side Card (Asset 3 Showcase) -->
+            <div class="bg-white dark:bg-darkCard rounded-2xl p-6 border border-gray-200 dark:border-zinc-800 shadow-xl lg:col-span-1">
+                <div class="relative overflow-hidden rounded-xl mb-6">
+                    <img src="https://xmg.xstreamflex.com/i/QTXd71" alt="artyom-kim-uydt8hNz3hE-unsplash.jpg" class="rounded-xl shadow-lg w-full h-48 object-cover object-center transform hover:scale-105 transition duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <span class="text-white font-bold text-sm">Focusing on your screen, not your metrics.</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">No Biometric Webcams Required</h3>
+                <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+                    Other programs demand active cameras, AI posture scanners, or third-party background software. Gamerxise operates completely on analog muscle memory—meaning your physical home environment remains entirely your own business.
+                </p>
+            </div>
+
+            <!-- Middle Main Highlight Card (Asset 1 Showcase) -->
+            <div class="bg-white dark:bg-darkCard rounded-2xl p-6 border border-gray-200 dark:border-zinc-800 shadow-xl lg:col-span-1">
+                <div class="relative overflow-hidden rounded-xl mb-6">
+                    <img src="https://xmg.xstreamflex.com/i/xdzeWJ" alt="20200625_173544591_iOS 2.jpg" class="rounded-xl shadow-lg w-full h-48 object-cover object-center transform hover:scale-105 transition duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <span class="text-white font-bold text-sm">Tested and safe workout formulas.</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Clean PDF Digital Delivery</h3>
+                <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+                    When you purchase our custom routines (Ab, Upper, Lower, or Complete), you receive highly detailed, direct PDF guides with zero backdoors or tracking scripts. Safe to store, safe to read on any tablet or smartphone.
+                </p>
+            </div>
+
+            <!-- Right Side Card (Asset 2 Showcase) -->
+            <div class="bg-white dark:bg-darkCard rounded-2xl p-6 border border-gray-200 dark:border-zinc-800 shadow-xl lg:col-span-1">
+                <div class="relative overflow-hidden rounded-xl mb-6">
+                    <img src="https://xmg.xstreamflex.com/i/r6oeLs" alt="20200630_032102024_iOS.jpg" class="rounded-xl shadow-lg w-full h-48 object-cover object-center transform hover:scale-105 transition duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <span class="text-white font-bold text-sm">Zero bloated tracking telemetry.</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Independent & Self-Contained</h3>
+                <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+                    Gamerxise is a solo operation built from extreme personal survival needs. No mega-corporations are scraping your personal health achievements. You scale your intensity strictly on your terms.
+                </p>
+            </div>
+        </div>
+
+        <!-- Interactive Policy Accordion Section (AlpineJS) -->
+        <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-zinc-800 p-6 sm:p-10 shadow-2xl mb-16" x-data="{ activeTab: 1 }">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                
+                <!-- Tab Controls -->
+                <div class="space-y-2 lg:col-span-1">
+                    <button 
+                        @click="activeTab = 1" 
+                        :class="activeTab === 1 ? 'border-l-4 border-xboxGreen bg-zinc-100 dark:bg-zinc-800/50 text-xboxGreen font-bold' : 'text-gray-600 dark:text-zinc-400 hover:text-xboxGreen hover:bg-zinc-50 dark:hover:bg-zinc-800/30'"
+                        class="w-full text-left px-4 py-3 rounded-r-lg text-sm font-medium transition-all duration-150 flex items-center justify-between">
+                        <span>1. What We Collect</span>
+                        <span class="text-xs">⚔️</span>
+                    </button>
+                    <button 
+                        @click="activeTab = 2" 
+                        :class="activeTab === 2 ? 'border-l-4 border-psBlue bg-zinc-100 dark:bg-zinc-800/50 text-psBlue font-bold' : 'text-gray-600 dark:text-zinc-400 hover:text-psBlue hover:bg-zinc-50 dark:hover:bg-zinc-800/30'"
+                        class="w-full text-left px-4 py-3 rounded-r-lg text-sm font-medium transition-all duration-150 flex items-center justify-between">
+                        <span>2. How Payments Are Handled</span>
+                        <span class="text-xs">💳</span>
+                    </button>
+                    <button 
+                        @click="activeTab = 3" 
+                        :class="activeTab === 3 ? 'border-l-4 border-xboxGreen bg-zinc-100 dark:bg-zinc-800/50 text-xboxGreen font-bold' : 'text-gray-600 dark:text-zinc-400 hover:text-xboxGreen hover:bg-zinc-50 dark:hover:bg-zinc-800/30'"
+                        class="w-full text-left px-4 py-3 rounded-r-lg text-sm font-medium transition-all duration-150 flex items-center justify-between">
+                        <span>3. Cookies & Tracking</span>
+                        <span class="text-xs">🍪</span>
+                    </button>
+                    <button 
+                        @click="activeTab = 4" 
+                        :class="activeTab === 4 ? 'border-l-4 border-psBlue bg-zinc-100 dark:bg-zinc-800/50 text-psBlue font-bold' : 'text-gray-600 dark:text-zinc-400 hover:text-psBlue hover:bg-zinc-50 dark:hover:bg-zinc-800/30'"
+                        class="w-full text-left px-4 py-3 rounded-r-lg text-sm font-medium transition-all duration-150 flex items-center justify-between">
+                        <span>4. Player Rights</span>
+                        <span class="text-xs">🛡️</span>
+                    </button>
+                    <button 
+                        @click="activeTab = 5" 
+                        :class="activeTab === 5 ? 'border-l-4 border-xboxGreen bg-zinc-100 dark:bg-zinc-800/50 text-xboxGreen font-bold' : 'text-gray-600 dark:text-zinc-400 hover:text-xboxGreen hover:bg-zinc-50 dark:hover:bg-zinc-800/30'"
+                        class="w-full text-left px-4 py-3 rounded-r-lg text-sm font-medium transition-all duration-150 flex items-center justify-between">
+                        <span>5. Our Founder's Pledge</span>
+                        <span class="text-xs">✍️</span>
+                    </button>
+                </div>
+
+                <!-- Tab Content Windows -->
+                <div class="lg:col-span-3 bg-zinc-50 dark:bg-zinc-900/40 rounded-2xl p-6 sm:p-8 border border-gray-100 dark:border-zinc-800/80">
+                    
+                    <!-- Tab 1 -->
+                    <div x-show="activeTab === 1" x-transition:enter="transition ease-out duration-200" class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 bg-xboxGreen/10 text-xboxGreen rounded-lg text-xl">⚔️</span>
+                            <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white">Information We Actively Collect</h2>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+                            To facilitate your training, we only receive and keep essential digital inventory elements:
+                        </p>
+                        <ul class="space-y-3 pl-4 list-disc text-sm text-gray-600 dark:text-zinc-400">
+                            <li><strong>Contact Details:</strong> Your email address and purchase history so that we can securely deliver your digital Gamerxise PDF guides or custom health hacks.</li>
+                            <li><strong>Interaction Analytics:</strong> Very standard server logs to ensure the website is rendering properly across gaming consoles, PC browsers, and mobile devices.</li>
+                            <li><strong>Zero External Health Scraping:</strong> We do not monitor your heart rate, weight, physical appearance, video streams, or console session logs. What you play on your controller is entirely your victory.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab 2 -->
+                    <div x-show="activeTab === 2" x-transition:enter="transition ease-out duration-200" class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 bg-psBlue/10 text-psBlue rounded-lg text-xl">💳</span>
+                            <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white">Secure, Encrypted Payments via Stripe</h2>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+                            Your payment is handled strictly by top-tier financial gatekeepers.
+                        </p>
+                        <div class="bg-zinc-100 dark:bg-zinc-800/80 p-4 rounded-xl border border-zinc-200 dark:border-zinc-700 flex items-start gap-3">
+                            <span class="text-2xl">🔒</span>
+                            <p class="text-xs text-gray-700 dark:text-zinc-300">
+                                <strong>Important Note:</strong> We use industry-standard Stripe integration. Your raw credit card numbers, CVV code, or banking authorization details never bypass our server. Our direct Stripe link connects you securely to absolute bank-grade encryption layers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3 -->
+                    <div x-show="activeTab === 3" x-transition:enter="transition ease-out duration-200" class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 bg-xboxGreen/10 text-xboxGreen rounded-lg text-xl">🍪</span>
+                            <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white">Our Lean Cookie Policy</h2>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+                            No endless tracking pixels, no intrusive retargeting scripts following you around the web.
+                        </p>
+                        <ul class="space-y-2 pl-4 list-decimal text-sm text-gray-600 dark:text-zinc-400">
+                            <li><strong>Session Cookies:</strong> Temporarily set to remember your layout selections, light/dark mode choices, and ensure proper styling load speeds.</li>
+                            <li><strong>No Ad Network Intermediaries:</strong> Gamerxise does not lease pixels to large third-party advertising rings.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab 4 -->
+                    <div x-show="activeTab === 4" x-transition:enter="transition ease-out duration-200" class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 bg-psBlue/10 text-psBlue rounded-lg text-xl">🛡️</span>
+                            <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white">Player & Customer Rights (GDPR / CCPA)</h2>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+                            Regardless of where you are gaming globally, you possess full ownership of your data parameters:
+                        </p>
+                        <ul class="space-y-3 pl-4 list-disc text-sm text-gray-600 dark:text-zinc-400">
+                            <li><strong>Right of Erasure:</strong> Want us to completely wipe your transaction trace or email subscription? Simply send a request through our Support channel.</li>
+                            <li><strong>Data Export:</strong> Retrieve exact proof of what transactions have been documented under your name.</li>
+                            <li><strong>Zero Sale Commitment:</strong> We pledge with a 100% developer guarantee that we will never sell, lease, or trade your personal email list to marketing brokers.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tab 5 -->
+                    <div x-show="activeTab === 5" x-transition:enter="transition ease-out duration-200" class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="p-2 bg-xboxGreen/10 text-xboxGreen rounded-lg text-xl">✍️</span>
+                            <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white">Our Founder's Personal Pledge</h2>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+                            "I created this exercise method out of necessity to save my own physical life. Currently, I am the founder, creator, active user, and only member of the Gamerxise company. My main goal is to help you build healthy physical resilience while having ultimate fun in your favorite games. I value mutual trust above everything. If you ever have a concern regarding data or payment procedures, write to me directly."
+                        </p>
+                        <div class="flex items-center gap-4 pt-2">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-xboxGreen">
+                                <img src="https://xmg.xstreamflex.com/i/e0Bnbq" alt="20200922_184055338_iOS.jpg" class="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-extrabold text-gray-900 dark:text-white">Gamerxise Founder & Developer</h4>
+                                <p class="text-[11px] text-gray-500">Targeting high physical performance through controller muscle memory.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Safe Workout Setup Showcase: Visual Gallery -->
+        <div class="bg-zinc-100 dark:bg-zinc-900 rounded-3xl p-8 sm:p-12 mb-16 border border-gray-200 dark:border-zinc-800">
+            <h3 class="text-xl sm:text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">Designed For Pure Controller Execution</h3>
+            <p class="text-sm text-gray-600 dark:text-zinc-400 max-w-2xl mx-auto text-center mb-10">
+                Gamerxise programs focus entirely on utilizing existing controller designs (PS / Xbox style) alongside clinical exercises. Physical muscle memory overrides any need for invasive data tracking. Below is the style of execution we guide you through in our high-resolution PDFs.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <img src="https://xmg.xstreamflex.com/i/e0Bnbq" alt="20200922_184055338_iOS.jpg" class="rounded-2xl shadow-xl w-full h-64 object-cover" />
+                    <p class="text-xs text-gray-500 text-center">Standard Controller Workout Environment — Simple and clean setups</p>
+                </div>
+                <div class="space-y-4">
+                    <img src="https://xmg.xstreamflex.com/i/qM4z8L" alt="Logo (30).png" class="rounded-2xl shadow-xl w-full h-64 object-cover bg-black" />
+                    <p class="text-xs text-gray-500 text-center">Gamerxise Verified System Brand — Built out of physical necessity</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- HIGH-CONVERTING CALL TO ACTION BANNER (STRIKE BUTTON INCLUDED) -->
+        <section id="pricing-cta" class="relative overflow-hidden rounded-3xl bg-neutral-950 text-white p-8 sm:p-12 lg:p-16 border border-zinc-800 shadow-2xl">
+            <!-- Background Glow Elements -->
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-xboxGreen/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-psBlue/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="px-3 py-1 bg-xboxGreen/30 text-xboxGreen rounded-full text-xs font-semibold uppercase tracking-wider">
+                        Secure Checkout Guaranteed
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-none">
+                        Get the Complete <br><span class="text-glow-green text-xboxGreen">Gamerxise Program</span>
+                    </h2>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        Ready to lose 30lbs in 3 months just like our founder and top followers did? You get the complete body package: Abs, Upper, Lower, and the RPG style FitQuest workout. Clinical exercises designed to fade right into your play sessions, boosting performance and saving your life.
+                    </p>
+                    <div class="flex flex-wrap gap-4 text-xs text-zinc-400">
+                        <span class="flex items-center gap-1">✔️ No equipment required</span>
+                        <span class="flex items-center gap-1">✔️ Works with any Xbox/PS controller</span>
+                        <span class="flex items-center gap-1">✔️ Absolute Privacy Secured</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 bg-zinc-900/90 rounded-2xl p-6 border border-zinc-800 text-center space-y-6">
+                    <div class="space-y-1">
+                        <span class="text-xs text-zinc-400 line-through">$135 Combined Value</span>
+                        <div class="text-4xl font-black text-white">$60</div>
+                        <p class="text-xs text-zinc-400">One-time payment. Secure SSL billing via Stripe.</p>
+                    </div>
+
+                    <!-- Stripe active payment button integration -->
+                    <a href="https://buy.stripe.com/fZu5kEc8pcjs6pp9YTfnO00" class="block w-full py-4 px-6 rounded-xl btn-gradient text-white text-base font-extrabold tracking-wide shadow-xl hover:scale-105 transition duration-200 uppercase">
+                        Buy Complete Package ($60)
+                    </a>
+
+                    <div class="flex justify-center items-center gap-4 text-xs text-zinc-400">
+                        <span>🔒 Direct Bank Encryption</span>
+                        <span>•</span>
+                        <span>📥 Instant PDF Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER -->
+    
+
+    <!-- Functional Scripts -->
+    <script>
+        const btn = document.getElementById('theme-toggle-btn');
+        const btnMobile = document.getElementById('theme-toggle-btn-mobile');
+        const sunIcon = document.getElementById('theme-toggle-sun');
+        const moonIcon = document.getElementById('theme-toggle-moon');
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                sunIcon?.classList.add('hidden');
+                moonIcon?.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                sunIcon?.classList.remove('hidden');
+                moonIcon?.classList.add('hidden');
+            }
+        }
+
+        btn?.addEventListener('click', toggleDarkMode);
+        btnMobile?.addEventListener('click', toggleDarkMode);
+
+        // Check initial theme
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            sunIcon?.classList.remove('hidden');
+            moonIcon?.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            sunIcon?.classList.add('hidden');
+            moonIcon?.classList.remove('hidden');
+        }
+
+        // Mobile Menu Script
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn?.addEventListener('click', () => {
+            mobileMenu?.classList.toggle('hidden');
+        });
+    </script>
+
+<footer class="bg-neutral-950 text-gray-400 py-12 border-t border-zinc-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <span class="text-lg font-black tracking-wider text-white">GAMERXISE</span>
+                    <p class="mt-2 text-xs text-gray-400">
+                        Helping you change your life, save your life, and do it all while having fun.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Subpages</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-xboxGreen">Home</a></li>
+                        <li><a href="products.html" class="hover:text-xboxGreen">Programs (All PDFs)</a></li>
+                        <li><a href="about.html" class="hover:text-xboxGreen">Our Journey & Story</a></li>
+                        <li><a href="blog.html" class="hover:text-xboxGreen">Blog & Science</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Resources</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="contact.html" class="hover:text-xboxGreen">Contact Support</a></li>
+                        <li><a href="terms.html" class="hover:text-xboxGreen">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="hover:text-xboxGreen">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Disclaimer</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed">
+                        Consult with your health professional before starting any interactive workout systems. Individual physical results may vary.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-600">
+                <p>&copy; 2024 Gamerxise Company. All rights reserved.</p>
+                <p>Designed for gamers who demand peak performance.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+(function() {
+  function initNavControls() {
+    const btn = document.getElementById('mobile-menu-btn') || document.querySelector('[data-menu-toggle]');
+    const menu = document.getElementById('mobile-menu') || document.querySelector('[data-menu-content]');
+    if (btn && menu) {
+      btn.onclick = function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+      };
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => menu.classList.add('hidden'));
+      });
+    }
+    const themeBtn = document.getElementById('theme-toggle-btn') || document.querySelector('[data-theme-toggle]');
+    if (themeBtn) {
+      themeBtn.onclick = function(e) {
+        e.stopPropagation();
+        document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('xsites_theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch(err){}
+      };
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavControls);
+  } else {
+    initNavControls();
+  }
+})();
+</script>
+<script>
+        // DOM Elements
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-btn-mobile');
+        const themeToggleSun = document.getElementById('theme-toggle-sun');
+        const themeToggleMoon = document.getElementById('theme-toggle-moon');
+        
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Theme Setup
+        // Defaulting to "crisp, modern light mode" as requested.
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            if(themeToggleSun) themeToggleSun.classList.remove('hidden');
+            if(themeToggleMoon) themeToggleMoon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            if(themeToggleSun) themeToggleSun.classList.add('hidden');
+            if(themeToggleMoon) themeToggleMoon.classList.remove('hidden');
+        }
+
+        // Toggle Theme Handlers
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                themeToggleSun.classList.add('hidden');
+                themeToggleMoon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                themeToggleSun.classList.remove('hidden');
+                themeToggleMoon.classList.add('hidden');
+            }
+        }
+
+        if(themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+        if(themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Drawer Handler
+        if(mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
